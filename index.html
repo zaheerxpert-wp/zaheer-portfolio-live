@@ -1,0 +1,1354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhammad Zaheer - Digital Solutions Expert</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #D4AF37;
+            --secondary: #E8D5B5;
+            --accent: #F5E6D3;
+            --dark: #0a0a0a;
+            --darker: #000000;
+            --light: #ffffff;
+            --gray: #a0a0a0;
+            --beige: #D4C5B9;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--dark);
+            color: var(--light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navbar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(20px);
+            padding: 1.5rem 5%;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .nav-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            letter-spacing: -0.5px;
+            cursor: pointer;
+        }
+
+        .logo i {
+            font-size: 2rem;
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 3rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--beige);
+            text-decoration: none;
+            transition: all 0.3s;
+            position: relative;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 140px 5% 80px;
+            background: var(--darker);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(212, 175, 55, 0.05), transparent);
+            z-index: 0;
+        }
+
+        .hero-container {
+            max-width: 1400px;
+            width: 100%;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-text h1 {
+            font-size: 5rem;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            color: var(--light);
+            letter-spacing: -2px;
+        }
+
+        .hero-text h1 .highlight {
+            color: var(--primary);
+        }
+
+        .hero-text .subtitle {
+            font-size: 1.8rem;
+            color: var(--beige);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .experience-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--primary);
+            color: var(--darker);
+            padding: 0.7rem 1.8rem;
+            border-radius: 50px;
+            margin: 1.5rem 0;
+            font-weight: 700;
+            font-size: 0.95rem;
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+        }
+
+        .hero-description {
+            font-size: 1.15rem;
+            line-height: 1.9;
+            color: var(--gray);
+            margin: 2rem 0;
+            max-width: 550px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.7rem;
+            background: var(--primary);
+            color: var(--darker);
+            padding: 1.2rem 2.8rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: all 0.3s;
+            box-shadow: 0 15px 35px rgba(212, 175, 55, 0.3);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 45px rgba(212, 175, 55, 0.4);
+            background: var(--secondary);
+        }
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.7rem;
+            background: transparent;
+            color: var(--primary);
+            padding: 1.2rem 2.8rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            border: 2px solid var(--primary);
+            transition: all 0.3s;
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: var(--darker);
+            transform: translateY(-5px);
+        }
+
+        .social-row {
+            display: flex;
+            gap: 1rem;
+            margin-top: 3rem;
+        }
+
+        .social-btn {
+            width: 55px;
+            height: 55px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: transparent;
+            border: 2px solid rgba(212, 175, 55, 0.3);
+            border-radius: 50%;
+            color: var(--beige);
+            font-size: 1.3rem;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+
+        .social-btn:hover {
+            background: var(--primary);
+            color: var(--darker);
+            border-color: var(--primary);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3);
+        }
+
+        .hero-image-container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .image-wrapper {
+            position: relative;
+            width: 550px;
+            height: 550px;
+        }
+
+        .image-backdrop {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: var(--primary);
+            border-radius: 50%;
+            opacity: 0.08;
+            filter: blur(80px);
+            animation: float 8s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) scale(1); }
+            50% { transform: translateY(-30px) scale(1.05); }
+        }
+
+        .profile-image {
+            position: relative;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 8px solid var(--primary);
+            box-shadow: 0 30px 80px rgba(212, 175, 55, 0.2);
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 120px 5%;
+            position: relative;
+        }
+
+        .section-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+
+        .section-label {
+            display: inline-block;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: var(--light);
+            margin-bottom: 1.5rem;
+            letter-spacing: -1px;
+        }
+
+        .section-description {
+            font-size: 1.15rem;
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.9;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .service-card {
+            background: rgba(212, 175, 55, 0.03);
+            padding: 3rem;
+            border-radius: 30px;
+            border: 2px solid rgba(212, 175, 55, 0.2);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--primary);
+            opacity: 0;
+            transition: opacity 0.5s;
+            z-index: 0;
+        }
+
+        .service-card:hover::before {
+            opacity: 0.05;
+        }
+
+        .service-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            border-color: var(--primary);
+            box-shadow: 0 35px 70px rgba(212, 175, 55, 0.2);
+        }
+
+        .service-icon {
+            width: 85px;
+            height: 85px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--primary);
+            border-radius: 22px;
+            font-size: 2.3rem;
+            color: var(--darker);
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 1;
+            transition: transform 0.5s;
+        }
+
+        .service-card:hover .service-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .service-card h3 {
+            font-size: 1.65rem;
+            font-weight: 800;
+            margin-bottom: 1.2rem;
+            color: var(--light);
+            position: relative;
+            z-index: 1;
+        }
+
+        .service-card p {
+            color: var(--gray);
+            line-height: 1.9;
+            font-size: 1.05rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Projects Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .project-card {
+            background: rgba(212, 175, 55, 0.03);
+            border-radius: 30px;
+            border: 2px solid rgba(212, 175, 55, 0.2);
+            overflow: hidden;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+        }
+
+        .project-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            border-color: var(--primary);
+            box-shadow: 0 35px 70px rgba(212, 175, 55, 0.2);
+        }
+
+        .project-image {
+            height: 250px;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.2), rgba(232, 213, 181, 0.1));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4.5rem;
+            color: var(--primary);
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.5s;
+        }
+
+        .project-card:hover .project-image {
+            transform: scale(1.1);
+        }
+
+        .project-image i {
+            position: relative;
+            z-index: 1;
+            transition: transform 0.5s;
+        }
+
+        .project-card:hover .project-image i {
+            transform: rotate(10deg) scale(1.2);
+        }
+
+        .project-content {
+            padding: 2.5rem;
+        }
+
+        .project-content h3 {
+            font-size: 1.55rem;
+            font-weight: 800;
+            margin-bottom: 1.2rem;
+            color: var(--light);
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.7rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .tag {
+            background: rgba(212, 175, 55, 0.1);
+            color: var(--primary);
+            padding: 0.5rem 1.2rem;
+            border-radius: 25px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            transition: all 0.3s;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .project-card:hover .tag {
+            background: rgba(212, 175, 55, 0.2);
+        }
+
+        .project-content p {
+            color: var(--gray);
+            line-height: 1.8;
+        }
+
+        /* Tools Grid */
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+            gap: 2rem;
+        }
+
+        .tool-card {
+            background: rgba(212, 175, 55, 0.03);
+            padding: 2.5rem 2rem;
+            border-radius: 25px;
+            border: 2px solid rgba(212, 175, 55, 0.2);
+            text-align: center;
+            transition: all 0.4s;
+        }
+
+        .tool-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-10px) scale(1.08);
+            box-shadow: 0 25px 50px rgba(212, 175, 55, 0.15);
+        }
+
+        .tool-card i {
+            font-size: 3.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            transition: transform 0.4s;
+        }
+
+        .tool-card:hover i {
+            transform: scale(1.2) rotate(10deg);
+        }
+
+        .tool-card p {
+            font-weight: 700;
+            color: var(--beige);
+            font-size: 1.05rem;
+        }
+
+        /* Contact Section */
+        .contact-grid-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-top: 4rem;
+        }
+
+        .contact-form-section {
+            background: rgba(212, 175, 55, 0.03);
+            padding: 3rem;
+            border-radius: 30px;
+            border: 2px solid rgba(212, 175, 55, 0.2);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .contact-form-section h3 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 2rem;
+            color: var(--primary);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--beige);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem 1.5rem;
+            border: 2px solid rgba(212, 175, 55, 0.3);
+            border-radius: 15px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: all 0.3s;
+            background: rgba(10, 10, 10, 0.5);
+            color: var(--light);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .contact-info-section {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .contact-info-card {
+            background: rgba(212, 175, 55, 0.03);
+            padding: 2.5rem;
+            border-radius: 25px;
+            border: 2px solid rgba(212, 175, 55, 0.2);
+            transition: all 0.3s;
+        }
+
+        .contact-info-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(212, 175, 55, 0.15);
+        }
+
+        .contact-info-card i {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--primary);
+            border-radius: 15px;
+            font-size: 1.8rem;
+            color: var(--darker);
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-info-card h4 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+            color: var(--light);
+        }
+
+        .contact-info-card p,
+        .contact-info-card a {
+            color: var(--gray);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .contact-info-card a:hover {
+            color: var(--primary);
+        }
+
+        .success-message {
+            background: #10b981;
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 15px;
+            margin-bottom: 1.5rem;
+            display: none;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .success-message.show {
+            display: flex;
+        }
+
+        /* WhatsApp Float */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 35px;
+            right: 35px;
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2.5rem;
+            z-index: 1000;
+            box-shadow: 0 10px 40px rgba(37, 211, 102, 0.4);
+            transition: all 0.3s;
+            text-decoration: none;
+            animation: pulse-wa 2.5s infinite;
+        }
+
+        @keyframes pulse-wa {
+            0%, 100% {
+                box-shadow: 0 10px 40px rgba(37, 211, 102, 0.4);
+                transform: scale(1);
+            }
+            50% {
+                box-shadow: 0 10px 50px rgba(37, 211, 102, 0.6);
+                transform: scale(1.05);
+            }
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.15) !important;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--darker);
+            text-align: center;
+            padding: 3rem;
+            color: var(--gray);
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        footer p {
+            font-size: 1rem;
+        }
+
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            width: 30px;
+            height: 3px;
+            background: var(--primary);
+            border-radius: 3px;
+            transition: all 0.3s;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(9px, 9px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(8px, -8px);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                gap: 4rem;
+                text-align: center;
+            }
+
+            .hero-text h1 {
+                font-size: 4rem;
+            }
+
+            .hero-description {
+                margin: 2rem auto;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .social-row {
+                justify-content: center;
+            }
+
+            .image-wrapper {
+                width: 450px;
+                height: 450px;
+            }
+
+            .profile-image {
+                width: 420px;
+                height: 420px;
+            }
+
+            .contact-grid-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 90px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 90px);
+                background: rgba(10, 10, 10, 0.98);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                padding: 3rem;
+                gap: 2rem;
+                transition: left 0.4s;
+                border-top: 1px solid rgba(212, 175, 55, 0.2);
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .nav-links a {
+                font-size: 1.4rem;
+                justify-content: center;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .hero {
+                padding: 120px 5% 60px;
+            }
+
+            .hero-text h1 {
+                font-size: 3rem;
+            }
+
+            .hero-text .subtitle {
+                font-size: 1.3rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .btn-primary, .btn-secondary {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .image-wrapper {
+                width: 340px;
+                height: 340px;
+            }
+
+            .profile-image {
+                width: 320px;
+                height: 320px;
+            }
+
+            .section {
+                padding: 80px 5%;
+            }
+
+            .section-title {
+                font-size: 2.5rem;
+            }
+
+            .services-grid,
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .tools-grid {
+                grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            }
+
+            .whatsapp-float {
+                width: 65px;
+                height: 65px;
+                font-size: 2.2rem;
+                bottom: 25px;
+                right: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="logo">
+                <i class="fas fa-rocket"></i>
+                <span>Let's Succeed</span>
+            </div>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#tools">Tools</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-text">
+                <h1>Muhammad <span class="highlight">Zaheer</span></h1>
+                <p class="subtitle">Digital Solutions Expert</p>
+                <div class="experience-tag">
+                    <i class="fas fa-award"></i>
+                    <span>3.5+ Years Experience</span>
+                </div>
+                <p class="hero-description">
+                    Empowering businesses through innovative web development, strategic digital marketing, and data-driven SEO solutions. Delivering measurable results with cutting-edge technology and creative excellence.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn-primary">
+                        <i class="fas fa-paper-plane"></i>
+                        Let's Work Together
+                    </a>
+                    <a href="#projects" class="btn-secondary">
+                        <i class="fas fa-folder-open"></i>
+                        View Projects
+                    </a>
+                </div>
+                <div class="social-row">
+                    <a href="https://wa.me/923096585735" target="_blank" class="social-btn" title="WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/muhammad-zaheer247" target="_blank" class="social-btn" title="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://github.com/zaheerxpert-wp" target="_blank" class="social-btn" title="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="mailto:zaheerxpert.official@gmail.com" class="social-btn" title="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image-container">
+                <div class="image-wrapper">
+                    <div class="image-backdrop"></div>
+                    <div class="profile-image">
+                        <img src="images/zaheerimage.jpg" alt="Muhammad Zaheer">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="section-label">WHAT I OFFER</div>
+                <h2 class="section-title">Professional Services</h2>
+                <p class="section-description">
+                    Comprehensive digital solutions designed to transform your business vision into reality with measurable impact and sustainable growth
+                </p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Website Development</h3>
+                    <p>Full-stack web development expertise with custom-coded solutions and WordPress mastery. Building scalable, high-performance websites with clean architecture and modern frameworks.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>SEO Optimization</h3>
+                    <p>Advanced search engine optimization strategies combining technical SEO, on-page optimization, and authoritative link building to increase organic traffic and rankings.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fab fa-shopify"></i>
+                    </div>
+                    <h3>Shopify Development</h3>
+                    <p>End-to-end Shopify store development and optimization. From theme customization to payment integration and conversion rate optimization.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-ad"></i>
+                    </div>
+                    <h3>Google & Meta Ads</h3>
+                    <p>Performance-driven paid advertising campaigns across Google Ads and Meta platforms. Strategic targeting and continuous optimization to maximize ROAS.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Digital Marketing</h3>
+                    <p>360-degree digital marketing strategies encompassing content marketing, email automation, and analytics. Creating campaigns that drive sustainable growth.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-list-alt"></i>
+                    </div>
+                    <h3>Product Listing</h3>
+                    <p>Professional e-commerce product listing and optimization. SEO-rich descriptions and competitive pricing analysis to maximize visibility and conversions.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-share-alt"></i>
+                    </div>
+                    <h3>Social Media Management</h3>
+                    <p>Strategic social media management across all major platforms. Content creation, community engagement, and analytics-driven strategy.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="section-label">PORTFOLIO</div>
+                <h2 class="section-title">Featured Projects</h2>
+                <p class="section-description">
+                    Success stories showcasing exceptional results across diverse industries
+                </p>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Premium E-Commerce Platform</h3>
+                        <div class="project-tags">
+                            <span class="tag">Shopify</span>
+                            <span class="tag">SEO</span>
+                            <span class="tag">Marketing</span>
+                        </div>
+                        <p>Developed a comprehensive e-commerce solution with custom Shopify theme and advanced SEO. Achieved 150% sales increase within 3 months.</p>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Enterprise Corporate Website</h3>
+                        <div class="project-tags">
+                            <span class="tag">WordPress</span>
+                            <span class="tag">Custom Code</span>
+                            <span class="tag">Responsive</span>
+                        </div>
+                        <p>Built professional corporate website with custom WordPress theme development and advanced functionality modules.</p>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Multi-Platform Ad Campaign</h3>
+                        <div class="project-tags">
+                            <span class="tag">Google Ads</span>
+                            <span class="tag">Meta Ads</span>
+                            <span class="tag">Analytics</span>
+                        </div>
+                        <p>Orchestrated comprehensive advertising campaign resulting in 300% ROI and 5x increase in qualified leads.</p>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-store"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Product Catalog Optimization</h3>
+                        <div class="project-tags">
+                            <span class="tag">SEO</span>
+                            <span class="tag">Listing</span>
+                            <span class="tag">Conversion</span>
+                        </div>
+                        <p>Optimized 500+ product listings with SEO-rich descriptions. Enhanced visibility by 200% and improved conversion rates.</p>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Social Media Growth Strategy</h3>
+                        <div class="project-tags">
+                            <span class="tag">Social Media</span>
+                            <span class="tag">Content</span>
+                            <span class="tag">Engagement</span>
+                        </div>
+                        <p>Managed comprehensive social media presence. Grew follower base from 2K to 50K+ with measurable engagement improvements.</p>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-code-branch"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Custom Web Application</h3>
+                        <div class="project-tags">
+                            <span class="tag">PHP</span>
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">MySQL</span>
+                        </div>
+                        <p>Engineered sophisticated web application with real-time processing, secure authentication, and API integrations.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tools Section -->
+    <section id="tools" class="section">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="section-label">EXPERTISE</div>
+                <h2 class="section-title">Tools & Technologies</h2>
+                <p class="section-description">
+                    Mastery of industry-leading technologies and platforms
+                </p>
+            </div>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <i class="fab fa-wordpress"></i>
+                    <p>WordPress</p>
+                </div>
+                <div class="tool-card">
+                    <i class="fab fa-shopify"></i>
+                    <p>Shopify</p>
+                </div>
+                <div class="tool-card">
+                    <i class="fab fa-html5"></i>
+                    <p>HTML5</p>
+                </div>
+                <div class="tool-card">
+                    <i class="fab fa-css3-alt"></i>
+                    <p>CSS3</p>
+                </div>
+                <div class="tool-card">
+                    <i class="fab fa-js"></i>
+                    <p>JavaScript</p>
+                </div>
+                <div class="tool-card">
+                    <i class="fab fa-php"></i>
+                    <p>PHP</p>
+                </div>
+                <div class="tool-card">
+                    <i class="fab fa-google"></i>
+                    <p>Google Ads</p>
+                </div>
+                <div class="tool-card">
+                    <i class="fab fa-facebook"></i>
+                    <p>Meta Ads</p>
+                </div>
+                <div class="tool-card">
+                    <i class="fas fa-search-dollar"></i>
+                    <p>SEO Tools</p>
+                </div>
+                <div class="tool-card">
+                    <i class="fas fa-chart-bar"></i>
+                    <p>Analytics</p>
+                </div>
+                <div class="tool-card">
+                    <i class="fab fa-git-alt"></i>
+                    <p>Git</p>
+                </div>
+                <div class="tool-card">
+                    <i class="fas fa-database"></i>
+                    <p>MySQL</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="section-label">GET IN TOUCH</div>
+                <h2 class="section-title">Let's Collaborate</h2>
+                <p class="section-description">
+                    Ready to transform your digital presence? Let's discuss your project
+                </p>
+            </div>
+
+            <div class="contact-grid-layout">
+                <div class="contact-form-section">
+                    <h3>Send Me a Message</h3>
+                    <div class="success-message" id="successMessage">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Message sent successfully! I'll get back to you soon.</span>
+                    </div>
+                    <form id="contactForm" onsubmit="handleSubmit(event)">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" required placeholder="Enter your full name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required placeholder="What's this about?">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" required placeholder="Tell me about your project..."></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary" style="width: 100%;">
+                            <i class="fas fa-paper-plane"></i>
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+
+                <div class="contact-info-section">
+                    <div class="contact-info-card">
+                        <i class="fab fa-whatsapp"></i>
+                        <h4>WhatsApp</h4>
+                        <p>Quick response guaranteed</p>
+                        <a href="https://wa.me/923096585735" target="_blank">+92 309 6585735</a>
+                    </div>
+
+                    <div class="contact-info-card">
+                        <i class="fas fa-envelope"></i>
+                        <h4>Email</h4>
+                        <p>For detailed inquiries</p>
+                        <a href="mailto:zaheerxpert.official@gmail.com">zaheerxpert.official@gmail.com</a>
+                    </div>
+
+                    <div class="contact-info-card">
+                        <i class="fab fa-linkedin"></i>
+                        <h4>LinkedIn</h4>
+                        <p>Let's connect professionally</p>
+                        <a href="https://www.linkedin.com/in/muhammad-zaheer247" target="_blank">muhammad-zaheer247</a>
+                    </div>
+
+                    <div class="contact-info-card">
+                        <i class="fab fa-github"></i>
+                        <h4>GitHub</h4>
+                        <p>Check out my code</p>
+                        <a href="https://github.com/zaheerxpert-wp" target="_blank">zaheerxpert-wp</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/923096585735" target="_blank" class="whatsapp-float" title="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Muhammad Zaheer. All rights reserved. | Crafted with <i class="fas fa-heart" style="color: #D4AF37;"></i> and Code</p>
+    </footer>
+
+    <script>
+        // Menu Toggle
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            const hamburger = document.querySelector('.hamburger');
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        }
+
+        // Close menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                const navLinks = document.querySelector('.nav-links');
+                const hamburger = document.querySelector('.hamburger');
+                navLinks.classList.remove('active');
+                hamburger.classList.remove('active');
+            });
+        });
+
+        // Contact Form Handler
+        function handleSubmit(event) {
+            event.preventDefault();
+            
+            const successMsg = document.getElementById('successMessage');
+            successMsg.classList.add('show');
+            
+            // Reset form
+            document.getElementById('contactForm').reset();
+            
+            // Hide success message after 5 seconds
+            setTimeout(() => {
+                successMsg.classList.remove('show');
+            }, 5000);
+        }
+
+        // Scroll Animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all cards
+        setTimeout(() => {
+            document.querySelectorAll('.service-card, .tool-card, .contact-info-card, .project-card').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'all 0.6s ease-out';
+                observer.observe(el);
+            });
+        }, 100);
+
+        // Active nav link on scroll
+        window.addEventListener('scroll', () => {
+            let current = '';
+            const sections = document.querySelectorAll('section');
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= (sectionTop - 150)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
